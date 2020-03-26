@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/monokai.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+      <div class="reveal">
+          <div class="slides" id="container">
+              <section>
+                  <section data-markdown="example.md"
+                           data-separator="^\r?\n\r?\n\r?\n"
+                           data-separator-vertical="^\r?\n\r?\n"
+                           data-separator-notes="^Note:"
+                           data-charset="utf-8"
+                           data-background-image="https://cn.bing.com/th?id=OHR.Knowth_ZH-CN0295374506_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4">
+                  </section>
+              </section>
+              <section>
+                  <section data-markdown data-background-image="https://cn.bing.com/th?id=OHR.KeichitsuCrocuse_ZH-CN1061292366_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp">
+                      ## picture show
+                  </section>
+                  <section data-background-image="https://cn.bing.com/th?id=OHR.Knowth_ZH-CN0295374506_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4"></section>
+                  <section data-background-image="https://cn.bing.com/th?id=OHR.YukonGames_ZH-CN0135612170_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4"></section>
+                  <section data-background-image="https://cn.bing.com/th?id=OHR.MetamorphicRocks_ZH-CN9753251368_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4"></section>
+                  <section data-background-image="https://cn.bing.com/th?id=OHR.Cirkelbroen_ZH-CN9645986135_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4"></section>
+                  <section data-background-image="https://cn.bing.com/th?id=OHR.FrenchColorado_ZH-CN9446885520_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4"></section>
+                  <section data-background-image="https://cn.bing.com/th?id=OHR.SiestaKey_ZH-CN1759696989_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4"></section>
+                  <section data-background-image="https://cn.bing.com/th?id=OHR.CubsEmerge_ZH-CN1697031244_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=2880&h=1620&rs=1&c=4"></section>
+              </section>
+              <section>
+                  <textarea>
+                      ## Page title
+
+                      A paragraph with some text and
+                      a [link](http://hakim.se).
+                  </textarea>
+              </section>
+          </div>
+      </div>
+
+      <script src="js/reveal.js"></script>
+
+      <script>
+          function getParameterByName(name, url) {
+              if (!url) url = window.location.href;
+              name = name.replace(/[\[\]]/g, '\\$&');
+              var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                  results = regex.exec(url);
+              if (!results) return null;
+              if (!results[2]) return '';
+              return decodeURIComponent(results[2].replace(/\+/g, ' '));
+          }
+var role = getParameterByName('role');
+role = role === 'master' ? role : 'client';
+// More info about config & dependencies:
+// - https://github.com/hakimel/reveal.js#configuration
+// - https://github.com/hakimel/reveal.js#dependencies
+Reveal.initialize({
+    hash: true,
+    multiplex: {
+        // Example values. To generate your own, see                    the socket.io server instructions.
+        secret: '15849484232722536949', // Obtained                    from the socket.io server. Gives this (the master) control of the presentation
+        id: '84993dc2095aeeae', // Obtained from socket.io server
+        url: 'http://192.168.1.12:1948' //Location of socket.io server
+    },
+    dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+            { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/highlight/highlight.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                        { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
+                            { src: 'plugin/multiplex/' + role + '.js', async: true },
+                                    { src: 'plugin/multiplex/client.js', async: true },
+                                        { src: 'plugin/hpaint/hpaint-1.0.js', async: true }
+    ]});    
+      </script>
+    </body>
+</html>
